@@ -11,9 +11,9 @@ const useStyle = makeStyles(theme => ({
         alignItems: 'center'
     },
     paper: {
-        padding: 70,
-        marginLeft: 50,
-        marginRight: 50,
+        padding: '5%',
+        marginLeft: '5%',
+        marginRight: '5%',
         backgroundColor: '#1f1f1f',
         color: '#f1f1f1'
     },
