@@ -11,6 +11,7 @@ import AdminDashboard from './components/adminScreen/AdminDashboard';
 import ShippingSteps from './components/shippingScreen/ShippingSteps';
 import Contact from './components/Contact';
 import About from './components/About';
+import Page404 from './components/Page404';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {useSelector} from 'react-redux';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/register" component={Register}/>
         <PrivateAdminRoute path="/admindashboard" component={AdminDashboard}/>
         <Route path="/shipping" component={ShippingSteps}/>
+        <Route path="*" component={Page404}/>
       </Switch>
       <Footer />
     </div>
