@@ -36,7 +36,9 @@ const useStyles = makeStyles(theme => ({
     image: {
         width: '100%',
         maxHeight: 500,
-        height: '100%'
+        height: '100%',
+        cursor: 'pointer',
+        objectFit: 'cover'
     },
     cartBtn: {
         marginLeft: 20,

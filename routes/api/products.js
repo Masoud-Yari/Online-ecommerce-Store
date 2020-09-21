@@ -5,8 +5,12 @@ const {adminVerify, auth} = require('../../token');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const data = await Product.find();
-    res.send(data);
+    try {
+        const data = await Product.find();
+        res.send(data);
+    } catch (error) {
+        res.status(401).send(error.message);
+    }
 });
 
 router.post('/', auth, adminVerify, async (req, res) => {
@@ -59,18 +63,26 @@ router.put('/:id', auth, adminVerify, async (req, res) => {
 });
 
 router.delete('/:id', auth, adminVerify, async (req, res) => {
-    const product = await Product.findById(req.params.id);
-    if(product) {
-        await product.remove();
-        res.send({success: 'Product remove successfuly'});
-    }else {
-        res.status(401).send({msg: 'Error removing data'});
+    try {
+        const product = await Product.findById(req.params.id);
+        if(product) {
+            await product.remove();
+            res.send({success: 'Product remove successfuly'});
+        }else {
+            res.status(401).send({msg: 'Error removing data'});
+        }
+    } catch (error) {
+        res.status(401).send(error.message);
     }
 });
 
 router.get('/:id', async (req, res) => {
-    const productDetails = await Product.findById(req.params.id);
-    res.send(productDetails);
+    try {
+        const productDetails = await Product.findById(req.params.id);
+        res.send(productDetails);
+    } catch (error) {
+        res.status(401).send(error.message);
+    }
 });
 
 module.exports = router;

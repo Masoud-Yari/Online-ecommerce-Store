@@ -32,12 +32,15 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-const Products = () => {
+const Products = ({history}) => {
 
     const classes = useStyles();
 
+    const querySearch = history.location.search.split('=')[1];
+
     const [displayProducts, setDisplayProducts] = useState([]);
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState(() => querySearch ? querySearch : '');
+    
 
     const {products, loading, error} = useSelector(state => state.productsList);
     const dispatch = useDispatch();
@@ -47,6 +50,9 @@ const Products = () => {
     }, [dispatch]);
 
     useEffect(() => {
+
+        if(!products) return;
+
         // Declare a switch statement to handle categories buttons
         switch(category) {
             case 'all':
@@ -63,6 +69,7 @@ const Products = () => {
                 return setDisplayProducts(products);
         }
     }, [category, products])
+
 
     const handleSearch = e => {
         setDisplayProducts(products.filter(product => {

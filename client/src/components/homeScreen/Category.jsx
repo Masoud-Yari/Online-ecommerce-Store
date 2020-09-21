@@ -34,22 +34,22 @@ const Category = () => {
                 <Typography className={classes.title} variant="h2" component="h1">Category</Typography>
                 <Grid  container spacing={2} >
                     <Grid item xs={6}  sm={3}>
-                        <Link to={'/products'}>
+                        <Link to={'/products?category=watch'}>
                             <img className={classes.image} src="/images/watch-category.jpg" alt="watch"/>
                         </Link>
                     </Grid>
                     <Grid item xs={6} sm={3}>
-                        <Link to={'/products'}>
+                        <Link to={'/products?category=mobile'}>
                             <img className={classes.image} src="/images/mobile-category.jpg" alt="mobile"/>
                         </Link>
                     </Grid>
                     <Grid item xs={6}  sm={3}>
-                        <Link to={'/products'}>
+                        <Link to={'/products?category=camera'}>
                             <img className={classes.image} src="/images/camera-category.jpg" alt="camera"/>
                         </Link>
                     </Grid>
                     <Grid item xs={6}  sm={3}>
-                        <Link to={'/products'}>
+                        <Link to={'/products?category=tablet'}>
                             <img className={classes.image} src="/images/tablet-category.jpg" alt="tablet"/>
                         </Link>
                     </Grid>

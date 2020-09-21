@@ -95,7 +95,7 @@ const Contact = () => {
                         <TextField style={{marginTop: 20}} type="text" placeholder="Your Name"/>
                         <TextField style={{marginTop: 20}} type="text" placeholder="Your Email"/>
                         <textarea className={classes.textArea} type="text" placeholder="Type your message"/>
-                        <Button style={{marginTop: 20}}>SEND</Button>
+                        <Button style={{marginTop: 20}} onClick={e => alert('Sorry this is sample a site!')}>SEND</Button>
                     </Paper>
                 </Grid>
             </Grid>
