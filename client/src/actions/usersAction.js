@@ -36,9 +36,9 @@ export const register = (name, email, password, rePassword) => async dispatch =>
         password,
         rePassword
     });
-        if(data.user) {
-            dispatch({type: USER_REGISTER_SUCCESS, payload: data.user});
-            Cookie.set('userData', JSON.stringify(data.user));
+        if(data) {
+            dispatch({type: USER_REGISTER_SUCCESS, payload: data});
+            //Cookie.set('userData', JSON.stringify(data.user));
         }else if(data.msg) {
             dispatch({type: USER_REGISTER_FAILURE, payload: data.msg});
         }

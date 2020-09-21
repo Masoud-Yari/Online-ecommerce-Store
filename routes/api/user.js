@@ -62,7 +62,12 @@ router.post('/register', async (req, res) => {
         });
         
         const user = await newUser.save();
-        res.send({user});
+        res.send({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin
+        });
 
     } catch (error) {
         res.status(401).send({msg: 'Error on registering user!'})

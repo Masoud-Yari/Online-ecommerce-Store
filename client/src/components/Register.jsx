@@ -74,6 +74,7 @@ const Register = (props) => {
         e.preventDefault();
         if(password === rePassword) {
             dispatch(register(name, email, password, rePassword));
+            props.history.push('/signin');
         }else{
             props.history.push('/register');
         }
